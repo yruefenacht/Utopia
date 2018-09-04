@@ -18,8 +18,9 @@ class Eventhandler {
 
     constructor() {
 
+        this.panelSector                = $(".panel__sector")
         this.panelSectorFrame           = $(".panel__sector--frame")
-        this.panelSectorFrameColor      = "rgba(8, 8, 8, 0.5)"
+        this.panelSectorFrameColor      = "rgba(8, 8, 8, 0.8)"
         this.panelSectorFrameColorHover = "rgba(8, 8, 8, 0.3)"
 
     }
@@ -37,6 +38,15 @@ class Eventhandler {
             $(this).css("background", self.panelSectorFrameColor)
         })
 
+
+        self.panelSector.mouseenter(function() {
+            $(this).css("background-size", "105%")
+        })
+
+        self.panelSector.mouseleave(function() {
+            $(this).css("background-size", "100%")
+        })
+
     }
 
 
@@ -51,8 +61,8 @@ class Initializer {
 
     constructor() {
 
-        this.messageDuration    = 9000         //9000
-        this.messageFade        = 2000         //2000
+        this.messageDuration    = 1000         //9000
+        this.messageFade        = 1000         //2000
         this.initialDelay       = 1000         //1000
         this.intro          = $(".intro")
         this.introMessage1  = $(".intro__message--1")
@@ -79,7 +89,11 @@ class Initializer {
 
                         self.intro.fadeOut()
                         self.panelSector.css({"transform":"translate(0px)", "opacity":"1"})
-                        console.log("go")
+                        
+                        setTimeout(function() {
+                            self.panelSector.css("transition-delay", "0s")
+                            console.log("initialized")
+                        }, 1300)
                 
                     })
             })

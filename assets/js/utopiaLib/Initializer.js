@@ -4,8 +4,8 @@ class Initializer {
 
     constructor() {
 
-        this.messageDuration    = 9000         //9000
-        this.messageFade        = 2000         //2000
+        this.messageDuration    = 1000         //9000
+        this.messageFade        = 1000         //2000
         this.initialDelay       = 1000         //1000
         this.intro          = $(".intro")
         this.introMessage1  = $(".intro__message--1")
@@ -32,7 +32,11 @@ class Initializer {
 
                         self.intro.fadeOut()
                         self.panelSector.css({"transform":"translate(0px)", "opacity":"1"})
-                        console.log("go")
+                        
+                        setTimeout(function() {
+                            self.panelSector.css("transition-delay", "0s")
+                            console.log("initialized")
+                        }, 1300)
                 
                     })
             })
