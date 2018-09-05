@@ -30,6 +30,13 @@ hr {
   margin: 1em;
 }
 
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute; top: 0; left: 0;
+  background: #444;
+}
+
 .intro {
   background: #333;
   width: 100%;
@@ -40,7 +47,7 @@ hr {
   position: absolute; top: 0; left: 0;
   z-index: 1;
 
-  /*display: none;*/
+  display: none;
 }
 
 .intro__message {
@@ -53,6 +60,51 @@ hr {
   display: none;
 }
 
+.view {
+  width: 100%;
+  height: 100%;
+  position: fixed; top: 0; right: 0;
+  display: flex;
+  background: transparent;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+
+.view__sidePanel {
+  width: 40%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(8, 8, 8, 0.25);
+  transition: 0.5s;
+}
+
+.view__sector {
+  width: 60%;
+  height: 100%;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.view__sector__title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  margin: 1.5em 0;
+}
+
+.view__sector__description {
+  width: 60%;
+  color: white;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .panel {
   width: 100%;
   height: 100%;
@@ -60,11 +112,13 @@ hr {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  transition: 0.5s;
 }
 
 .panel__sector {
   background-position: center center;
   background-size: 100%;
+  background-repeat: no-repeat;
   position: relative;
   width: calc(100% / 3);
   height: calc(100% / 3);

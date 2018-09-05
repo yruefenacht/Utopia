@@ -18,6 +18,11 @@ class Eventhandler {
 
     constructor() {
 
+        this.view                       = $(".view")
+        this.viewSidePanel              = $(".view__sidePanel")
+        this.viewSectorTitle            = $(".view__sector__title")
+        this.viewSectorDescription      = $(".view__sector__description")
+        this.panel                      = $(".panel")
         this.panelSector                = $(".panel__sector")
         this.panelSectorFrame           = $(".panel__sector--frame")
         this.panelSectorFrameColor      = "rgba(8, 8, 8, 0.8)"
@@ -47,6 +52,25 @@ class Eventhandler {
             $(this).css("background-size", "100%")
         })
 
+
+        self.panelSector.click(function() {
+            self.panel.css("transform", "translateX(-60%)")
+            self.view.css("transform", "translateX(0)")
+            self.viewSidePanel.css("opacity", "1")
+
+            var sectorTitle         = $(this).find(".panel__sector__title").text()
+            var sectorDescription   = $(this).find(".panel__sector__description").text()
+
+            self.viewSectorTitle.text(sectorTitle)
+            self.viewSectorDescription.text(sectorDescription)
+        })
+
+        self.viewSidePanel.click(function() {
+            self.panel.css("transform", "translateX(0)")
+            self.view.css("transform", "translateX(100%)")
+            self.viewSidePanel.css("opacity", "0")
+        })
+
     }
 
 
@@ -61,9 +85,9 @@ class Initializer {
 
     constructor() {
 
-        this.messageDuration    = 1000         //9000
-        this.messageFade        = 1000         //2000
-        this.initialDelay       = 1000         //1000
+        this.messageDuration    = 0         //9000
+        this.messageFade        = 0         //2000
+        this.initialDelay       = 0         //1000
         this.intro          = $(".intro")
         this.introMessage1  = $(".intro__message--1")
         this.introMessage2  = $(".intro__message--2")
