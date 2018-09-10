@@ -4,9 +4,9 @@ class Initializer {
 
     constructor() {
 
-        this.messageDuration    = 0         //9000
-        this.messageFade        = 0         //2000
-        this.initialDelay       = 0         //1000
+        this.messageDuration    = 9000         //9000
+        this.messageFade        = 2000         //2000
+        this.initialDelay       = 1000         //1000
         this.intro          = $(".intro")
         this.introMessage1  = $(".intro__message--1")
         this.introMessage2  = $(".intro__message--2")

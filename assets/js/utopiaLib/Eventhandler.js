@@ -5,6 +5,7 @@ class Eventhandler {
     constructor() {
 
         this.view                       = $(".view")
+        this.viewBackButton             = $(".view__backButton")
         this.viewSidePanel              = $(".view__sidePanel")
         this.viewSectorImage            = $(".view__sector__image")
         this.viewSectorTitle            = $(".view__sector__text__title")
@@ -58,6 +59,21 @@ class Eventhandler {
             self.panel.css("transform", "translateX(0)")
             self.view.css("transform", "translateX(100%)")
             self.viewSidePanel.css("opacity", "0")
+        })
+
+        self.viewBackButton.click(function() {
+            self.panel.css("transform", "translateX(0)")
+            self.view.css("transform", "translateX(100%)")
+            self.viewSidePanel.css("opacity", "0")
+        })
+
+
+        self.viewBackButton.mouseenter(function() {
+            self.viewBackButton.css("transform", "scale(1.1)")
+        })
+
+        self.viewBackButton.mouseleave(function() {
+            self.viewBackButton.css("transform", "scale(1)")
         })
 
     }
