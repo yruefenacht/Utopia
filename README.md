@@ -1,3 +1,3 @@
 # Utopia
 
-https://yruefenacht.ch/Utopia/
+https://yruefenacht.ch/utopia/
